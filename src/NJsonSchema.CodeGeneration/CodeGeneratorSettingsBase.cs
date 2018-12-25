@@ -35,7 +35,7 @@ namespace NJsonSchema.CodeGeneration
 
         /// <summary>Gets or sets the type name generator.</summary>
         [JsonIgnore]
-        public ITypeNameGenerator TypeNameGenerator { get; set; } = new DefaultTypeNameGenerator();
+        public ITypeNameGenerator TypeNameGenerator { get; set; } = new MyTypeNameGenerator();
 
         /// <summary>Gets or sets the enum name generator.</summary>
         [JsonIgnore]
