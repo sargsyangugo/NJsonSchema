@@ -119,6 +119,9 @@ namespace NJsonSchema.CodeGeneration.CSharp.Models
                 .Replace(_settings.ArrayType + "<", _settings.ArrayBaseType + "<")
                 .Replace(_settings.DictionaryType + "<", _settings.DictionaryBaseType + "<") : null;
 
+        /// <summary>Gets the base class generic type name.</summary>
+        public string BaseClassGenericName => string.IsNullOrEmpty(BaseClassName) ? null: BaseClassName.Substring(BaseClassName.IndexOf('<') + 1, BaseClassName.IndexOf('>') - BaseClassName.IndexOf('<') - 1);
+
         /// <summary>Gets the base class model.</summary>
         public ClassTemplateModel BaseClass { get; }
 

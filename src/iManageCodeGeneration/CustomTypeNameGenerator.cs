@@ -1,20 +1,12 @@
-//-----------------------------------------------------------------------
-// <copyright file="DefaultTypeNameGenerator.cs" company="NJsonSchema">
-//     Copyright (c) Rico Suter. All rights reserved.
-// </copyright>
-// <license>https://github.com/rsuter/NJsonSchema/blob/master/LICENSE.md</license>
-// <author>Rico Suter, mail@rsuter.com</author>
-//-----------------------------------------------------------------------
-
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
+using NJsonSchema;
 
-namespace NJsonSchema
+namespace iManage.CodeGeneration
 {
-    /// <summary>Converts the last part of the full type name to upper case.</summary>
-    public class MyTypeNameGenerator : ITypeNameGenerator
+    public class CustomTypeNameGenerator : ITypeNameGenerator
     {
         // TODO: Expose as options to UI and cmd line?
 
@@ -33,8 +25,6 @@ namespace NJsonSchema
         {
             if (string.IsNullOrEmpty(typeNameHint) && !string.IsNullOrEmpty(schema.DocumentPath))
                 typeNameHint = schema.DocumentPath.Replace("\\", "/").Split('/').Last();
-
-            //var genericT = typeNameHint.Substring(typeNameHint.IndexOf('<') + 1, typeNameHint.IndexOf('>') - typeNameHint.IndexOf('<') - 1);
 
             typeNameHint = (typeNameHint ?? "")
                 .Replace("[", " Of ")

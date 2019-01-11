@@ -1,0 +1,9 @@
+﻿public IEnumerator<{{ BaseClassGenericName }}> GetEnumerator()
+{
+    return Data.GetEnumerator();
+}
+
+IEnumerator IEnumerable.GetEnumerator()
+{
+    return GetEnumerator();
+}

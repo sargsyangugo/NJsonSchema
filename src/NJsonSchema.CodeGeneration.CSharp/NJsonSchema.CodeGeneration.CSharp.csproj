@@ -24,6 +24,8 @@
   <ItemGroup>
     <None Remove="Templates\Class.Body.liquid" />
     <None Remove="Templates\Class.Constructor.Record.liquid" />
+    <None Remove="Templates\Class.IEnumerable.liquid" />
+    <None Remove="Templates\T\Class.Annotations.liquid" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Templates\Class.Annotations.liquid">
@@ -71,6 +73,10 @@
       </CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Templates\JsonInheritanceConverter.liquid">
+      <CustomToolNamespace>
+      </CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\T\Class.Annotations.liquid">
       <CustomToolNamespace>
       </CustomToolNamespace>
     </EmbeddedResource>
